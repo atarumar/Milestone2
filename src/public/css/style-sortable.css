@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap");
+
+:root {
+  --border-color: #e3e5e4;
+  --background-color: #000;
+  --background-secondary-color: #585555;
+  --draggable-color: #585555;
+  --upper-text-color: #adec52;
+  --text-color: #fff;
+  --right-color: #3ae374;
+  --wrong-color: #ff3838;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Blinker", sans-serif;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+}
+
+.logo {
+  position: absolute;
+  top: 16px;
+  left: 40px;
+  z-index: 20;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.logo h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link h1 {
+  cursor: pointer;
+}
+
+h1 {
+  color: var(--upper-text-color);
+}
+
+p {
+  color: var(--upper-text-color);
+}
+
+.draggable-list {
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0;
+  list-style-type: none;
+}
+
+.draggable-list li {
+  background-color: var(--background-color);
+  display: flex;
+  flex: 1;
+}
+
+.draggable-list li:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.draggable-list .number {
+  background-color: var(--background-secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.draggable-list li.over .draggable {
+  background-color: var(--draggable-color);
+}
+
+.draggable-list .person-name {
+  margin: 0 1.25rem 0 0;
+}
+
+.draggable-list li.right .person-name {
+  color: var(--right-color);
+}
+
+.draggable-list li.wrong .person-name {
+  color: var(--wrong-color);
+}
+
+.draggable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  flex: 1;
+}
+
+.check-btn {
+  background-color: #adec52;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+}
+
+.check-btn:active {
+  transform: scale(0.98);
+}
+
+.check-btn:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.check-btn:focus {
+  outline: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0px;
+}
+
+.check-btn, .next-btn {
+  margin-top: 0;
+  background-color: #adec52;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.next-btn i {
+  margin-left: 8px;
+}
+
+.next-btn:hover, .check-btn:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.next-btn:focus, .check-btn:focus {
+  outline: none;
+}
+
+
+@media (max-width: 575px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  .draggable-list .number {
+    font-size: 1.4rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .draggable {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+  
+  .check-btn, .next-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .draggable-list .number {
+    font-size: 1.6rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  .draggable {
+    font-size: 1rem;
+    padding: 0.85rem;
+  }
+  
+  .check-btn, .next-btn {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .draggable-list .number {
+    font-size: 1.75rem;
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+  
+  .draggable {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  
+  .check-btn, .next-btn {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .draggable-list .number {
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .draggable {
+    font-size: 1.2rem;
+    padding: 1.25rem;
+  }
+  
+  .check-btn, .next-btn {
+    font-size: 1.2rem;
+    padding: 14px 28px;
+  }
+}
